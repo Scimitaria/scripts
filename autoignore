@@ -5,4 +5,7 @@
 # based on a Github template          #
 # # # # # # # # # # # # # # # # # # # #
 
-
+#gets lines from template
+#how 2 read?
+lines=${awk test/template.txt}
+echo $lines
