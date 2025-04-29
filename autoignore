@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+# # # # # # # # # # # # # # # # # # # #
+# automatically populates a gitignore #
+# based on a Github template          #
+# # # # # # # # # # # # # # # # # # # #
+
+

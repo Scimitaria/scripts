@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+# shortcuts the process of running Monkeys Typing #
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+
+#if a filename isn't provided,
+#default to Playground
+fName=${$1:-"Playground"}
+
+./gradlew run -Pmain=cs2.AIP.$fname
