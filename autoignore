@@ -5,7 +5,17 @@
 # based on a Github template          #
 # # # # # # # # # # # # # # # # # # # #
 
+newGit=()
+
 #gets lines from template
-#how 2 read?
-lines=${awk test/template.txt}
-echo $lines
+#needs all this nonsense to not drop last line
+while IFS="" read -r line || [ -n "$line" ]; do
+    #exclude comments
+    if [[ $line != '#'* ]];
+    then newGit+=$line
+    fi
+done <test/template.txt
+
+for line in $newGit; do
+    echo $line
+done
