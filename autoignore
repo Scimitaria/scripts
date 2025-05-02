@@ -5,17 +5,20 @@
 # based on a Github template          #
 # # # # # # # # # # # # # # # # # # # #
 
-newGit=()
+#clear output file first
+: > test/output.txt
 
 #gets lines from template
 #needs all this nonsense to not drop last line
 while IFS="" read -r line || [ -n "$line" ]; do
-    #exclude comments
-    if [[ $line != '#'* ]];
-    then newGit+=$line
-    fi
-done <test/template.txt
 
-for line in $newGit; do
-    echo $line
-done
+    #   exclude comments        files found
+    if [[ $line != '#'* ]] && [[ $(find . -name $line) != '' ]];
+    #append item to output
+    then
+        echo $(find . -name $line)
+        echo $line >> test/output.txt
+    fi
+
+    #filepath
+done <test/template.txt
