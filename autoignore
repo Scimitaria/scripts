@@ -5,8 +5,11 @@
 # based on a Github template          #
 # # # # # # # # # # # # # # # # # # # #
 
+input=${1:-test/template.txt}
+output=${2:-test/output.txt}
+
 #clear output file first
-: > test/output.txt
+: > $output
 
 #gets lines from template
 #needs all this nonsense to not drop last line
@@ -16,9 +19,8 @@ while IFS="" read -r line || [ -n "$line" ]; do
     if [[ $line != '#'* ]] && [[ $(find . -name $line) != '' ]];
     #append item to output
     then
-        echo $(find . -name $line)
-        echo $line >> test/output.txt
+        echo $line >> $output
     fi
 
     #filepath
-done <test/template.txt
+done < $input
