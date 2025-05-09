@@ -22,3 +22,6 @@ initActions = 100
 addRate     = 1
 addNum      = initActions
 ```
+
+### ddos
+ddos is a very basic denial-of-service script that establishes recurring background processes to tie up your computer's processor. If you happen to be stupid enough to run this script, restarting your computer will stop the attack.
