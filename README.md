@@ -11,7 +11,7 @@ Takes input and output files as args:
 ### run
 run is an execution shortcut for Monkeys Typing. Takes main function and parameters as argument:
 ```
-./run Mario 20 20 2 20
+./run Mario 20 20 2 20 2 true
 ```
 
 Default values:
@@ -21,6 +21,8 @@ population  = 50
 initActions = 100
 addRate     = 1
 addNum      = initActions
+numParents  = 2
+algToggle   = true
 ```
 
 ### ddos
