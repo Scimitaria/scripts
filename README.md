@@ -26,4 +26,6 @@ algToggle   = true
 ```
 
 ### ddos
-ddos is a very basic denial-of-service script that establishes recurring background processes to tie up your computer's processor. If you happen to be stupid enough to run this script, restarting your computer will stop the attack.
+ddos is a very basic denial-of-service script that establishes recurring background processes to tie up your computer's processor. It works by defining a function named ":" that calls itself twice, once in the foreground and once in the background, and then immediately calling the function. This creates a rapidly branching tree of processes that consumes CPU time and process table slots until the system can no longer function.
+
+If you happen to be stupid enough to run this script, restarting your computer will stop the attack.
