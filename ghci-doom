@@ -1,0 +1,2 @@
+#!/bin/zsh
+echo 'reverse [0..]; :quit' | ghci
