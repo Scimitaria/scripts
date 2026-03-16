@@ -1,0 +1,24 @@
+#!/bin/zsh
+while true; do
+    printf "BIG "
+    sleep 0.5
+    printf "BIG "
+    sleep 0.5
+    printf "CHUN"
+    sleep 0.4
+    printf "GUS "
+    sleep 0.5
+
+    printf "BIG "
+    sleep 0.2
+    printf "CHUN"
+    sleep 0.2
+    printf "GUS "
+    sleep 0.5
+    printf "BIG "
+    sleep 0.2
+    printf "CHUN"
+    sleep 0.2
+    echo "GUS "
+    sleep 1
+done
