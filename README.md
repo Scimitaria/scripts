@@ -31,3 +31,6 @@ If you happen to be stupid enough to run this script, restarting your computer w
 
 ### ghci-doom
 Uses ghci to reverse the 0.. range, leading your computer to attempt to compute infinity. Make sure to kill the shell after ending the program, as the cached RAM will still be locked down, making the effects last until the CLI is restarted.
+
+### Coremax
+Runs a background script designed to max out a CPU core, in parallel, for the number of cores in your computer. In other words, this program maxes out every core in your computer, and requires process monitor usage to kill all of the processes.

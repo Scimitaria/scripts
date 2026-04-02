@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+cores=$(sysctl -n hw.ncpu)
+for i in {0..$cores}
+    yes > /dev/null &
