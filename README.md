@@ -34,3 +34,6 @@ Uses ghci to reverse the 0.. range, leading your computer to attempt to compute 
 
 ### Coremax
 Runs a background script designed to max out a CPU core, in parallel, for the number of cores in your computer. In other words, this program maxes out every core in your computer, and requires process monitor usage to kill all of the processes.
+
+### GetErrNo
+Counts build warnings in a .NET project. Takes proj file as an argument.
