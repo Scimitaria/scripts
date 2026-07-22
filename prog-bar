@@ -1,0 +1,44 @@
+#!/bin/zsh
+
+progress_bar() {
+    local current=$1 total=$2 width=40
+    local percent=$(( $current * 100 / $total ))
+    local filled=$(( $current * $width / $total ))
+    local empty=$(( $width - $filled ))
+
+    local bar_filled=$(printf "%${filled}s" | tr ' ' '#')
+    local bar_empty=$(printf "%${empty}s" | tr ' ' '-')
+
+    # \r returns cursor to start
+    printf "\rProgress: [%s%s] %d%%" "$bar_filled" "$bar_empty" "$percent"
+}
+
+total_steps=50
+for i in {1..$total_steps}; do
+    progress_bar $i $total_steps
+    sleep 0.05
+done
+print ""
+
+smooth_bar() {
+    local current=$1 total=$2 width=40
+    local percent=$(( $current * 100 / $total ))
+    local filled=$(( $current * $width / $total ))
+    local remainder=$(( ($current * $width * 8 / $total) % 8 ))
+
+    local blocks=(" " "▎" "▍" "▌" "▋" "▊" "▉" "█")
+    local bar=$(printf "%${filled}s" | tr ' ' '█')
+    [[ $remainder -gt 0 ]] && bar+="${blocks[$remainder+1]}"
+
+    local empty=$(( $width - ${#bar} ))
+    [[ $empty -gt 0 ]] && bar+=$(printf "%${empty}s")
+
+    printf "\rProgress: [%s] %d%%" "$bar" "$percent"
+}
+
+total_steps=100
+for i in {1..$total_steps}; do
+    smooth_bar $i $total_steps
+    sleep 0.02
+done
+print ""
