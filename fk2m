@@ -1,0 +1,47 @@
+#!/bin/zsh
+
+# Using the fibonacci sequence to convert between miles and kilometers
+
+m2k(){ printf "Direct calculation: %.1f kilometers\n" $(( $1 * 1.609344 )); }
+k2m(){ printf "Direct calculation: %.1f miles\n" $(( $1 / 1.609344 )); }
+
+m2k_fib(){
+    fib=( 0 1 )
+
+    for _ in {0..$1}; do
+        next=$(( $fib[-1] + $fib[-2] ));
+        if [ $next -eq $1 ]; then
+            km=$(( $fib[-1] + $next ))
+            echo "Fibonacci conversion: $km kilometers"
+            return
+        fi
+        fib+=$next
+    done
+
+    echo "Error: Specified number not found in the Fibonacci sequence" >&2
+    exit 1
+}
+k2m_fib(){
+    fib=( 0 1 )
+
+    for _ in {0..$1}; do
+        next=$(( $fib[-1] + $fib[-2] ));
+        if [ $next -eq $1 ]; then
+            mi="$fib[-1]"
+            echo "Fibonacci conversion: $mi miles"
+            return
+        fi
+        fib+=$next
+    done
+
+    echo "Error: Specified number not found in the Fibonacci sequence" >&2
+    exit 1
+}
+
+if (( ${${(e):-(m mi miles)}[(Ie)$2]} )); then
+    m2k $1
+    m2k_fib $1
+else
+    k2m $1
+    k2m_fib $1
+fi
