@@ -1,11 +1,13 @@
 #!/bin/zsh
+zmodload zsh/mathfunc
 
 # Using the fibonacci sequence to convert between miles and kilometers
 
 m2k(){ printf "Direct calculation: %.1f kilometers\n" $(( $1 * 1.609344 )); }
 k2m(){ printf "Direct calculation: %.1f miles\n" $(( $1 / 1.609344 )); }
 
-m2k_fib(){
+#TODO: use & for parallelism?
+m2k_fib_sequential(){
     fib=( 0 1 )
 
     for _ in {0..$1}; do
@@ -21,7 +23,7 @@ m2k_fib(){
     echo "Error: Specified number not found in the Fibonacci sequence" >&2
     exit 1
 }
-k2m_fib(){
+k2m_fib_sequential(){
     fib=( 0 1 )
 
     for _ in {0..$1}; do
@@ -38,10 +40,24 @@ k2m_fib(){
     exit 1
 }
 
+m2k_fib_const(){
+    phi=$(( (1.0 + sqrt(5.0)) / 2.0 ))
+    prev=$(( int($1 / $phi + 0.5) ))
+    km=$(( $1 + $prev))
+    echo "Fibonacci conversion: $km kilometers"
+}
+k2m_fib_const(){
+    phi=$(( (1.0 + sqrt(5.0)) / 2.0 ))
+    mi=$(( int($1 / $phi + 0.5) ))
+    echo "Fibonacci conversion: $mi miles"
+}
+
 if (( ${${(e):-(m mi miles)}[(Ie)$2]} )); then
     m2k $1
-    m2k_fib $1
+    m2k_fib_sequential $1
+    m2k_fib_const $1
 else
     k2m $1
-    k2m_fib $1
+    k2m_fib_sequential $1
+    k2m_fib_const $1
 fi
