@@ -4,7 +4,6 @@ on run argv
     set vol to output volume of (get volume settings)
     if (vol is equal to 0) then set volume output volume 20
 
-
     if (class of argv is list) then 
         set argc to (count of argv)
     else 
