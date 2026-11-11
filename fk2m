@@ -54,10 +54,10 @@ k2m_fib_const(){
 
 if (( ${${(e):-(m mi miles)}[(Ie)$2]} )); then
     m2k $1
-    m2k_fib_sequential $1
+    #m2k_fib_sequential $1
     m2k_fib_const $1
 else
     k2m $1
-    k2m_fib_sequential $1
+    #k2m_fib_sequential $1
     k2m_fib_const $1
 fi
