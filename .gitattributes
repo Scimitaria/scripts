@@ -1,0 +1,2 @@
+bin/osascript linguist-detectable=true
+bin/osascript linguist-language=AppleScript
