@@ -1,0 +1,29 @@
+#!/usr/bin/osascript
+
+on run argv
+    set vol to output volume of (get volume settings)
+    if (vol is equal to 0) then set volume output volume 20
+
+
+    if (class of argv is list) then 
+        set argc to (count of argv)
+    else 
+        error "help args are not list"
+    end if
+
+    if (argc is equal to 0) then
+            say "Hello, Scimitaria" speaking rate 180 pitch 45 modulation 100 volume 1.0
+    else if (argc is equal to 1) then
+        set speech to item 1 of argv as text
+        say speech speaking rate 180 pitch 45 modulation 100 volume 1.0
+    else 
+        set speech to item 1 of argv as text
+        set voice to item 2 of argv as text
+        try
+            say speech using voice speaking rate 180 pitch 45 modulation 100 volume 1.0
+        on error number -244
+            say text speaking rate 180 pitch 45 modulation 100 volume 1.0
+        end try
+    end if
+    set volume output volume vol
+end run

@@ -52,3 +52,6 @@ Fibonacci conversion: 9227465 kilometers
 `./fk2m 5 km` outputs:
 Direct calculation: 3.1 miles
 Fibonacci conversion: 3 miles
+
+### TTS
+Uses AppleScript to provide CLI TTS support
