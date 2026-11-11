@@ -44,14 +44,14 @@ Demonstrates two forms of shell progress bar:
 `smooth_bar`: A progress bar that uses ASCII unicode blocks to make a smooth bar
 
 ### FK2M
-Uses the Fibonacci sequence to convert between miles and kilometers
-Usage:
-`./fk2m 5702887 miles` outputs:
-Direct calculation: 9177907.0 kilometers
-Fibonacci conversion: 9227465 kilometers
-`./fk2m 5 km` outputs:
-Direct calculation: 3.1 miles
-Fibonacci conversion: 3 miles
+Uses the Fibonacci sequence to convert between miles and kilometers  
+Usage:  
+`./fk2m 5702887 miles` outputs:  
+Direct calculation: 9177907.0 kilometers  
+Fibonacci conversion: 9227465 kilometers  
+`./fk2m 5 km` outputs:  
+Direct calculation: 3.1 miles  
+Fibonacci conversion: 3 miles  
 
 ### TTS
 Uses AppleScript to provide CLI TTS support
