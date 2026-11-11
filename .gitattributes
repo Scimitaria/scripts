@@ -1,2 +1,2 @@
-bin/osascript linguist-detectable=true
-bin/osascript linguist-language=AppleScript
+tts linguist-detectable=true
+tts linguist-language=AppleScript
