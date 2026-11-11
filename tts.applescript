@@ -1,5 +1,3 @@
-#!/usr/bin/osascript
-
 on run argv
     set vol to output volume of (get volume settings)
     if (vol is equal to 0) then set volume output volume 20
