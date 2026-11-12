@@ -61,3 +61,11 @@ You can also supply a specific voice to speak in:
 `tts "Hello, world!" "Organ"`  
 Note that outputs from shell commands can also be read:  
 `tts "$(cat ~/.bashrc)"`
+
+### QlHpA
+Q-learning Hyperparameter Adjustment  
+Run with 
+```{zsh}
+EPOCHS=<epochs> ALPHA=<alpha> GAMMA=<gamma> EPSILON=<epsilon> vim -es -c "source setEpochs.vim" -c "wq" <target file>
+```  
+
