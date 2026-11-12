@@ -6,7 +6,6 @@ zmodload zsh/mathfunc
 m2k(){ printf "Direct calculation: %.1f kilometers\n" $(( $1 * 1.609344 )); }
 k2m(){ printf "Direct calculation: %.1f miles\n" $(( $1 / 1.609344 )); }
 
-#TODO: use & for parallelism?
 m2k_fib_sequential(){
     fib=( 0 1 )
 
