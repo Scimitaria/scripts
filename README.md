@@ -39,8 +39,8 @@ Runs a background script designed to max out a CPU core, in parallel, for the nu
 Counts build warnings in a .NET project. Takes proj file as an argument.
 
 ### prog-bar
-Demonstrates two forms of shell progress bar:
-`progress_bar`: A general-purpose progress bar
+Demonstrates two forms of shell progress bar:  
+`progress_bar`: A general-purpose progress bar  
 `smooth_bar`: A progress bar that uses ASCII unicode blocks to make a smooth bar
 
 ### FK2M
