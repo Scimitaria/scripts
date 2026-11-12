@@ -56,8 +56,8 @@ Fibonacci conversion: 3 miles
 ### TTS
 Uses AppleScript to provide CLI TTS support  
 Text supplied will be said in Siri's default voice:  
-`tts "Hello, world!"`
+`tts "Hello, world!"`  
 You can also supply a specific voice to speak in:  
-`tts "Hello, world!" "Organ"`
-Note that outputs from shell commands can also be read:
+`tts "Hello, world!" "Organ"`  
+Note that outputs from shell commands can also be read:  
 `tts "$(cat ~/.bashrc)"`
