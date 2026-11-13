@@ -4,6 +4,9 @@
 let g:epochs = !empty($EPOCHS) ? $EPOCHS : 0
 :%s/\<self\.epochs\s*=\s*\d\+\>/\="self.epochs = " . g:epochs/g
 
+let g:gameDepth = !empty($GAME_DEPTH) ? $GAME_DEPTH : 0
+:%s/\<self\.gameDepth\s*=\s*\d\+\>/\="self.gameDepth = " . g:gameDepth/g
+
 let g:alpha = !empty($ALPHA) ? $ALPHA : 0.8
 :%s/\<self\.alpha\s*=\s*\d\+\>/\="self.alpha = " . g:alpha/g
 
