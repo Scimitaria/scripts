@@ -1,5 +1,5 @@
 " Q-learning Hyperparameter Adjustor
-" Run with EPOCHS=<epochs> ALPHA=<alpha> GAMMA=<gamma> EPSILON=<epsilon> vim -es -c "source setEpochs.vim" -c "wq" <target file>
+" Run with EPOCHS=<epochs> GAME_DEPTH=<game depth> ALPHA=<alpha> GAMMA=<gamma> EPSILON=<epsilon> vim -es -c "source setEpochs.vim" -c "wq" <target file>
 
 let g:epochs = !empty($EPOCHS) ? $EPOCHS : 0
 :%s/\<self\.epochs\s*=\s*\d\+\>/\="self.epochs = " . g:epochs/g
