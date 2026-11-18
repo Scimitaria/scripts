@@ -65,7 +65,7 @@ Note that outputs from shell commands can also be read:
 ### QlHpA
 Q-learning Hyperparameter Adjustment  
 Run with one of:  
-```EPOCHS=<epochs> ALPHA=<alpha> GAMMA=<gamma> EPSILON=<epsilon> vim -es -c "source setEpochs.vim" -c "wq" <target file>``` 
+```EPOCHS=<epochs> ALPHA=<alpha> GAMMA=<gamma> EPSILON=<epsilon> vim -es -c "source setEpochs.vim" -c "wq" <target file>```  
 ```sed -f QlHpA.sed | sed -E -i '' -f - <target file>``` 
 Sed is much faster, but vim allows parameterization.
 
