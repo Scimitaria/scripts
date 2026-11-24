@@ -4,22 +4,26 @@ BEGIN {
     printf "%-20s %-15s %-12s\n", "Filename", "Bytes", "Disk Usage"
     printf "%-20s %-15s %-12s\n", "--------", "-----", "----------"
 
-    ls=""
+    prefix = (ARGC > 1 && ARGV[1] != "") ? ARGV[1] "/" : "./"
+    delete ARGV[1]
 
-    while ("ls -lh" | getline line) {
+    ls=""
+    ls_command = "ls -lh " prefix
+    while (ls_command | getline line) {
         if (line ~ /^total/) continue
         split(line, fields, /[[:space:]]+/)
         ls=sprintf("%s%-20s %5s\n", ls, fields[9], fields[5])
     }
-    close("ls -l")
+    close(ls_command)
 
     lsi=1
     linecount=split(ls, lines, "\n")
-    while ("du -sh *" | getline line) {
+    du_sh = "du -sh " prefix "*"
+    while (du_sh | getline line) {
         sub(/^[[:blank:]]+/, "", line) #drop leading whitespace
         split(line, fields, /[[:blank:]]+/)
         printf "%s %20s\n", lines[lsi], fields[1]
         lsi+=1
     }
-    close("du -sh *")
+    close(du_sh)
 }
