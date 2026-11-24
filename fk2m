@@ -1,5 +1,6 @@
 #!/bin/zsh
 zmodload zsh/mathfunc
+set -euo pipefail
 
 # Using the fibonacci sequence to convert between miles and kilometers
 

@@ -1,4 +1,5 @@
 #!/bin/zsh
+set -euo pipefail
 
 # # # # # # # # # # # # # # # # # # # #
 # automatically populates a gitignore #

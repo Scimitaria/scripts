@@ -1,4 +1,5 @@
 #!/bin/zsh
+set -euo pipefail
 
 progress_bar() {
     local current=$1 total=$2 width=40
